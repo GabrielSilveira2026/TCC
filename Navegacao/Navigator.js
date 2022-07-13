@@ -8,12 +8,18 @@ import ProgramasTela from '../Telas/ProgramasTela'
 import RecomendadosTela from '../Telas/RecomendadosTela'
 import PecasTela from '../Telas/PecasTela'
 import SelecionadosTela from '../Telas/SelecionadosTela'
+import Cores from '../constantes/Cores';
 
 const Stack = createNativeStackNavigator()
 
 const container = (
     <NavigationContainer>
-        <Stack.Navigator initialRouteName="Jogos">
+        <Stack.Navigator 
+            initialRouteName="Jogos"
+            screenOptions={{
+                headerStyle: {BackgroundColor: Cores.primary},
+                headerTintColor: 'black'
+            }}>
             <Stack.Screen name="Filtros" component={FiltrosTela}/>
             <Stack.Screen name="Jogos" component={JogosTela}/>
             <Stack.Screen name="Programas" component={ProgramasTela}/>
